@@ -1,0 +1,473 @@
+Q: What is machine learning?
+<think>
+The question asks for a definition of machine learning. Key points to cover: it is a branch of AI, it lets computers learn from data rather than explicit rules, and algorithms improve through experience by finding patterns.
+</think>
+A: Machine learning is a subset of artificial intelligence that enables computers to learn from data without being explicitly programmed. Algorithms improve automatically through experience, identifying patterns and making decisions with minimal human intervention.
+
+Q: What is deep learning?
+<think>
+Deep learning is a subset of machine learning. Key aspects: it uses neural networks with many layers (hence "deep"), it is inspired by the brain, and it excels at unstructured data like images and text. I should mention these layers learn hierarchical features.
+</think>
+A: Deep learning uses artificial neural networks with many layers to model complex patterns in data. These networks are inspired by the structure of the human brain and can process vast amounts of unstructured data such as images, text, and audio.
+
+Q: What is natural language processing?
+<think>
+NLP is the field that bridges computers and human language. I should cover: understanding, interpreting, and generating language, and give concrete examples like translation, sentiment analysis, and chatbots to make it tangible.
+</think>
+A: Natural language processing allows machines to understand, interpret, and generate human language. Applications include translation, sentiment analysis, chatbots, and text summarization, transforming the way humans interact with computers.
+
+Q: What are transformers in machine learning?
+<think>
+Transformers are an architecture introduced in the 2017 "Attention Is All You Need" paper. Key differentiator from RNNs: self-attention allows parallel processing of sequences. This enabled scaling to large models. I should mention the year and the self-attention mechanism.
+</think>
+A: Transformers are a neural network architecture introduced in 2017 that revolutionized natural language processing. They rely on self-attention mechanisms to process sequences in parallel, enabling the training of much larger and more powerful language models.
+
+Q: What is GPT-2?
+<think>
+GPT-2 is a specific model by OpenAI. I should mention: who made it, how it was trained (large internet text corpus), its core capability (coherent text generation from a prompt), and why it was notable at the time.
+</think>
+A: GPT-2 is a large language model developed by OpenAI, trained on 40 gigabytes of internet text. It can generate coherent and contextually relevant paragraphs of text given a short prompt, demonstrating impressive capabilities in natural language generation.
+
+Q: What is fine-tuning a language model?
+<think>
+Fine-tuning builds on pretraining. I need to explain the two-phase process: (1) pretrain on massive general data to get broad language knowledge, then (2) continue training on a smaller domain-specific dataset. This transfers knowledge and is much cheaper than training from scratch.
+</think>
+A: Fine-tuning a pretrained language model involves continuing training on a smaller, domain-specific dataset. This process transfers the general linguistic knowledge learned during pretraining to a specialized task, requiring far less data and compute than training from scratch.
+
+Q: What is the attention mechanism?
+<think>
+Attention lets the model focus on relevant parts of the input. The key insight: not all tokens are equally important for predicting the next one. By assigning weights to each token, the model can capture long-range dependencies that RNNs struggled with. I should explain query, key, value conceptually.
+</think>
+A: The attention mechanism in neural networks allows models to focus on relevant parts of the input when producing an output. It assigns different weights to different tokens, enabling the model to capture long-range dependencies in text more effectively than recurrent architectures.
+
+Q: What is tokenization?
+<think>
+Tokenization converts raw text into discrete units. I should explain that modern models use subword tokenization (not word-level or character-level), and why: to handle rare words without an enormous vocabulary. Byte Pair Encoding is the main method used by GPT-2.
+</think>
+A: Tokenization is the process of splitting text into smaller units called tokens, which can be words, subwords, or characters. Modern language models use subword tokenization methods like Byte Pair Encoding to handle rare words and large vocabularies efficiently.
+
+Q: What is backpropagation?
+<think>
+Backpropagation is the learning algorithm for neural networks. Core idea: use the chain rule of calculus to compute how much each parameter contributed to the error, then adjust accordingly. I should mention it computes gradients that an optimizer like Adam then uses to update weights.
+</think>
+A: Backpropagation is the algorithm used to train neural networks by computing gradients of the loss function with respect to each parameter. These gradients are then used by an optimizer such as Adam or SGD to update the weights in the direction that minimizes the loss.
+
+Q: What is overfitting?
+<think>
+Overfitting is when the model memorizes training data instead of generalizing. I should explain the symptom (low training loss, high validation loss), the cause (model too complex or data too limited), and the common remedies: dropout, weight decay, data augmentation, early stopping.
+</think>
+A: Overfitting occurs when a model learns the training data too well, including its noise and outliers, resulting in poor generalization to new data. Techniques to combat overfitting include dropout, weight decay, data augmentation, and early stopping.
+
+Q: Why did transformers replace recurrent neural networks?
+<think>
+RNNs process tokens sequentially, preventing parallelism. Transformers use self-attention to process all tokens at once. This parallel processing is the key advantage: it allows much faster training on modern GPU/TPU hardware and enables scaling to billions of parameters.
+</think>
+A: The transformer architecture replaced recurrent neural networks for most sequence modeling tasks due to its ability to process entire sequences in parallel. This parallelism allows transformers to scale to massive datasets and model sizes with the help of modern hardware accelerators.
+
+Q: What is reinforcement learning from human feedback?
+<think>
+RLHF is the technique used to align language models. Key steps: (1) supervised fine-tuning on demonstrations, (2) train a reward model from human preference comparisons, (3) optimize the language model against the reward model using RL (typically PPO). I should explain that it makes outputs more aligned with human values.
+</think>
+A: Reinforcement learning from human feedback is a training method where a language model is fine-tuned using feedback from human evaluators. This process aligns the model's outputs more closely with human preferences and values, improving the quality and safety of generated text.
+
+Q: What are embeddings?
+<think>
+Embeddings convert discrete tokens into continuous vector representations. The key insight: semantically similar words end up near each other in vector space because they appear in similar contexts during training. This lets the model generalize across synonyms and related concepts.
+</think>
+A: Embeddings are dense vector representations of words or tokens that capture semantic relationships. Words with similar meanings tend to have embeddings that are close together in vector space, enabling models to understand language at a semantic level.
+
+Q: What is the softmax function?
+<think>
+Softmax is a normalization function applied to the output logits. It converts arbitrary real-valued scores into a probability distribution that sums to 1. The exponential ensures all values are positive and amplifies differences between high and low scores. Essential for selecting the next token.
+</think>
+A: The softmax function is commonly used in the output layer of classification networks to convert raw scores into probability distributions. It ensures that the output probabilities sum to one, making it suitable for choosing among multiple possible tokens during text generation.
+
+Q: What is gradient descent?
+<think>
+Gradient descent is the core optimization algorithm. The gradient tells us the direction of steepest ascent in the loss landscape, so we move in the opposite direction to reduce loss. I should mention the three main variants: batch, stochastic, and mini-batch, and note Adam as the practical go-to variant.
+</think>
+A: Gradient descent is an optimization algorithm that iteratively adjusts model parameters to minimize a loss function. Stochastic gradient descent and its variants like Adam and RMSProp are widely used in deep learning for their computational efficiency and strong empirical performance.
+
+Q: What is transfer learning?
+<think>
+Transfer learning leverages knowledge gained from one task for a related task. In NLP this means: pretrain on large general corpus (learns language), then fine-tune on a small specific dataset (learns the task). This is incredibly efficient because the model already understands language structure.
+</think>
+A: Transfer learning enables models trained on one task to be applied to a different but related task. In NLP, large models are pretrained on massive text corpora and then fine-tuned on specific downstream tasks such as question answering, translation, or summarization.
+
+Q: What is batch normalization?
+<think>
+Batch normalization normalizes layer inputs across the batch dimension. This addresses internal covariate shift — as weights change during training, the distribution of each layer's inputs changes too, making training unstable. BatchNorm stabilizes this and also acts as regularization. However it is less popular in transformers than layer norm.
+</think>
+A: Batch normalization is a technique that normalizes the inputs to each layer in a neural network, improving training stability and speed. It reduces internal covariate shift and acts as a form of regularization, often leading to better generalization performance.
+
+Q: What is cross-entropy loss?
+<think>
+Cross-entropy measures divergence between predicted and true probability distributions. For language modeling: at each position, the model outputs a distribution over the vocabulary and we compute how much probability it assigned to the actual correct next token. High probability to correct token = low loss. This equals negative log-likelihood.
+</think>
+A: The cross-entropy loss function measures the difference between the predicted probability distribution and the true distribution. It is widely used for training classification models and language models, where the goal is to maximize the likelihood of the correct next token.
+
+Q: What is hyperparameter tuning?
+<think>
+Hyperparameters are settings chosen before training, unlike parameters which are learned. Examples: learning rate, batch size, number of layers, dropout rate. Tuning these is an outer optimization loop. Grid search tries all combinations, random search samples randomly, and Bayesian optimization builds a probabilistic model of the search space.
+</think>
+A: Hyperparameter tuning is the process of selecting the best configuration of parameters that are not learned during training, such as learning rate, batch size, and number of layers. Grid search, random search, and Bayesian optimization are common techniques for finding optimal hyperparameters.
+
+Q: What is regularization in machine learning?
+<think>
+Regularization is any technique that reduces overfitting by constraining the model. I should cover multiple types: L2 weight decay penalizes large weights directly in the loss, dropout randomly disables neurons during training, and data augmentation artificially increases training set diversity.
+</think>
+A: Regularization techniques prevent neural networks from overfitting by adding constraints or penalties to the training process. L2 regularization penalizes large weights, dropout randomly deactivates neurons during training, and data augmentation artificially increases the size of the training set.
+
+Q: What hardware accelerates machine learning?
+<think>
+The key hardware types are GPUs and TPUs. GPUs were originally designed for graphics but their massively parallel architecture suits the matrix multiplications that dominate neural network computation. TPUs are Google's custom chips designed specifically for tensor operations. I should mention the parallelism that makes them effective.
+</think>
+A: Silicon chips designed specifically for machine learning, such as GPUs and TPUs, dramatically accelerate the training and inference of neural networks. These hardware accelerators perform matrix multiplications and other tensor operations in parallel, enabling models to train in hours instead of weeks.
+
+Q: What is Apple Silicon's advantage for machine learning?
+<think>
+Apple Silicon uses a unified memory architecture where CPU and GPU share the same physical memory pool. This eliminates the bottleneck of copying data between separate CPU RAM and GPU VRAM. For PyTorch, Apple provides the MPS backend which uses Metal Performance Shaders to run operations on the GPU.
+</think>
+A: Apple Silicon's unified memory architecture allows the CPU and GPU to share the same memory pool, enabling efficient execution of machine learning workloads. PyTorch supports Apple's Metal Performance Shaders backend for hardware-accelerated training on M-series chips.
+
+Q: What is the learning rate?
+<think>
+The learning rate controls the step size when updating weights. If too large, weight updates overshoot good solutions and training diverges. If too small, training is slow and may get stuck. Warmup starts with a small learning rate and increases it, letting the optimizer find a good region before taking large steps. Schedulers then decay it over time.
+</think>
+A: The learning rate is one of the most important hyperparameters in deep learning. A rate that is too high causes unstable training and divergence, while one that is too low results in slow convergence. Learning rate schedules and warmup steps help stabilize training across different phases.
+
+Q: What is an epoch in training?
+<think>
+An epoch is one full pass through the entire dataset. After one epoch the model has seen every training example once. Multiple epochs allow the model to refine its weights repeatedly on the same data. Validation loss is typically monitored to decide when to stop, since training beyond the optimal point leads to overfitting.
+</think>
+A: An epoch refers to one complete pass through the entire training dataset during model training. Models are typically trained for multiple epochs until the validation loss stops improving, a point known as the optimal stopping criterion.
+
+Q: How does the GPT-2 tokenizer work?
+<think>
+GPT-2 uses byte-level BPE. Standard BPE operates on characters, but byte-level BPE operates on raw bytes, meaning it can represent any Unicode text without unknown tokens. It starts with all 256 bytes as the base vocabulary and merges the most frequent adjacent pairs iteratively until the target vocabulary size is reached.
+</think>
+A: The GPT-2 tokenizer uses byte-level BPE encoding, which encodes any text without requiring an unknown token. This makes it robust to diverse inputs including code, numbers, and rare words by breaking them into subword units.
+
+Q: What is perplexity in language models?
+<think>
+Perplexity is the exponent of average cross-entropy loss over a test set: PPL = exp(average_loss). Intuitively it is the number of equally likely options the model is choosing between at each step. Lower perplexity means the model is more certain and accurate. It is the standard metric for evaluating language models.
+</think>
+A: Perplexity measures how well a language model predicts a sample of text. Lower perplexity indicates the model assigns higher probability to the test data, reflecting better understanding of language patterns and more accurate text generation.
+
+Q: How do you preprocess data for fine-tuning?
+<think>
+Data quality is crucial for fine-tuning. Steps include: removing duplicate entries that could cause the model to overfit specific examples, standardizing formatting for consistency (e.g., consistent Q/A format), removing noise like HTML tags or encoding errors, and splitting into train and validation sets to monitor generalization.
+</think>
+A: Data preprocessing for language model fine-tuning involves cleaning text, removing duplicates, standardizing formatting, and splitting into train and validation sets. The quality of training data has a significant impact on the quality of the fine-tuned model.
+
+Q: What is sequence length in transformers?
+<think>
+Sequence length is how many tokens the model processes at once. The self-attention mechanism computes pairwise similarities between all tokens, so memory scales as O(n^2) with sequence length n. This quadratic cost is why very long sequences are expensive. Longer sequences give more context but require more memory.
+</think>
+A: Sequence length is a critical parameter that determines how much context the model can consider when generating each token. Longer sequences capture more context but require quadratically more memory in transformer models due to the self-attention computation.
+
+Q: What is mixed precision training?
+<think>
+Mixed precision uses FP16 (16-bit) for most operations but keeps a master copy of weights in FP32 (32-bit). FP16 uses half the memory and is faster on modern hardware, but has less numerical range. The FP32 master copy prevents gradient underflow. This is why fp16=True in training arguments can speed up training significantly on compatible GPUs.
+</think>
+A: Mixed precision training uses 16-bit floating point numbers for most computations while keeping critical parts in 32-bit precision. This reduces memory usage and speeds up training on compatible hardware, enabling larger batch sizes and faster convergence.
+
+Q: What is a decoder-only transformer?
+<think>
+There are three main transformer variants: encoder-only (BERT), encoder-decoder (T5), and decoder-only (GPT). Decoder-only models use causal masking so each token can only attend to previous tokens. This makes them naturally suited for autoregressive text generation — predicting the next token given all previous ones.
+</think>
+A: The decoder-only transformer architecture used by GPT models processes text in a left-to-right causal manner, predicting each token based only on the tokens that came before it. This autoregressive design is well-suited for open-ended text generation tasks.
+
+Q: What is prompt engineering?
+<think>
+Prompt engineering is the art of designing inputs to steer model outputs without changing the weights. Effective prompts might include: task instructions, few-shot examples, formatting cues, and persona descriptions. It matters because language models are very sensitive to how questions are phrased.
+</think>
+A: Prompt engineering involves crafting input text to elicit desired outputs from a language model without updating the model's weights. Effective prompts provide context, examples, and clear instructions that guide the model toward generating useful and relevant responses.
+
+Q: What is zero-shot learning?
+<think>
+Zero-shot means the model handles tasks it has never been explicitly trained on. Large pretrained models can do this because they learn so much general knowledge during pretraining that they can interpret task descriptions and apply their knowledge accordingly. No examples are given in the prompt — just a description of the task.
+</think>
+A: Zero-shot learning refers to a model's ability to perform tasks it was never explicitly trained on by leveraging its broad general knowledge. Language models like GPT-2 demonstrate zero-shot capabilities by generalizing from patterns learned during pretraining to novel task descriptions.
+
+Q: What is few-shot learning?
+<think>
+Few-shot learning provides a small number of input-output examples in the prompt to demonstrate the desired behavior. The model infers the pattern from these examples and applies it to the new query without any weight updates. This is a form of in-context learning and works increasingly well as model scale increases.
+</think>
+A: Few-shot learning improves model performance on a specific task by providing a small number of examples within the input prompt. By seeing a few input-output pairs, the model infers the pattern and applies it to new instances without any gradient updates.
+
+Q: Why is Python popular for machine learning?
+<think>
+Python dominates ML for several reasons: clean readable syntax lowers the barrier to entry, dynamic typing speeds up prototyping, and the ecosystem is unmatched — PyTorch, TensorFlow, scikit-learn, NumPy, pandas, and Hugging Face are all Python-first. The community also produces abundant tutorials and documentation.
+</think>
+A: Python has become the dominant language for machine learning and data science due to its simplicity, readability, and rich ecosystem of libraries. Frameworks like PyTorch, TensorFlow, and scikit-learn provide powerful tools for building and training models.
+
+Q: What is PyTorch?
+<think>
+PyTorch is a deep learning framework by Meta AI. Its key distinction from early TensorFlow: eager execution — operations run immediately and return concrete values, making debugging with standard Python tools straightforward. It also provides dynamic computation graphs, unlike TensorFlow's original static graph approach.
+</think>
+A: PyTorch is a popular deep learning framework developed by Meta AI that provides dynamic computation graphs, making it intuitive for research and development. Its eager execution mode allows immediate evaluation of operations, simplifying debugging and experimentation.
+
+Q: What is the Hugging Face Transformers library?
+<think>
+Hugging Face Transformers provides a unified API for downloading, fine-tuning, and deploying pretrained models. Key abstractions: Model classes (GPT2LMHeadModel, BertModel, etc.), Tokenizer classes, Trainer class for fine-tuning, and the Model Hub for sharing models. It abstracts away low-level implementation details.
+</think>
+A: The Hugging Face Transformers library provides thousands of pretrained models and a unified API for fine-tuning them on custom datasets. It significantly lowers the barrier to applying state-of-the-art NLP models to real-world problems.
+
+Q: What is model checkpointing?
+<think>
+During long training runs, the model state is periodically saved to disk. This serves two purposes: (1) recovery — if training crashes, you can resume from the last checkpoint rather than starting over, and (2) model selection — you can pick the checkpoint with the best validation performance rather than always using the final weights.
+</think>
+A: Model checkpointing saves the state of a model during training at regular intervals, allowing training to be resumed if interrupted. Checkpoints also enable selecting the best model version based on validation metrics rather than always using the final weights.
+
+Q: What is inference in machine learning?
+<think>
+Inference is the model in production mode — weights are frozen and we just do forward passes to produce predictions. For language models this means autoregressive generation: encode the prompt, then repeatedly sample the next token and append it until we hit the max length or an end-of-sequence token.
+</think>
+A: Inference is the process of using a trained model to make predictions on new data. For language models, inference involves providing a prompt and having the model generate subsequent tokens one at a time using a decoding strategy such as greedy search, beam search, or sampling.
+
+Q: What is temperature in text generation?
+<think>
+Temperature T rescales logits before softmax: logit / T. When T < 1, the distribution becomes sharper (more peaked at the top token), making output more predictable and focused. When T > 1, the distribution flattens, increasing randomness and creativity. T = 1 is the unmodified distribution.
+</think>
+A: Temperature scaling controls the sharpness of the probability distribution during text generation. Lower temperature values make outputs more deterministic and focused, while higher values increase diversity and creativity by flattening the distribution over possible next tokens.
+
+Q: What is top-p sampling?
+<think>
+Top-p (nucleus) sampling selects from the smallest set of tokens whose cumulative probability reaches threshold p. At each step the vocabulary is sorted by probability, and we keep only the top tokens until their sum exceeds p. This dynamically adjusts: when the model is very confident, few tokens are considered; when uncertain, more are included.
+</think>
+A: Top-p sampling, also called nucleus sampling, restricts generation to the smallest set of tokens whose cumulative probability exceeds a threshold p. This technique balances quality and diversity by dynamically adjusting the candidate set based on the model's confidence at each step.
+
+Q: What is top-k sampling?
+<think>
+Top-k sampling restricts the next-token distribution to only the k most probable tokens, setting all others to zero probability before renormalizing. This prevents the model from generating extremely unlikely tokens. Combined with temperature, it produces varied but coherent text. A typical value is k = 50.
+</think>
+A: Top-k sampling limits generation to the k most likely tokens at each step, preventing the model from considering very low probability options. Combined with temperature scaling, top-k sampling produces coherent and varied text suitable for creative generation tasks.
+
+Q: What is repetition penalty?
+<think>
+Without repetition penalty, language models tend to get stuck in loops, repeating the same phrases. The penalty works by dividing the logit of any token that has already appeared in the generated sequence by the penalty factor (values > 1). This lowers the probability of repeated tokens and pushes the model to explore new content.
+</think>
+A: Repetition penalty is a technique used during text generation to discourage the model from repeating the same tokens or phrases. By reducing the probability of previously generated tokens, it encourages more diverse and natural-sounding outputs.
+
+Q: What is the Adam optimizer?
+<think>
+Adam (Adaptive Moment Estimation) maintains two running statistics per parameter: the first moment (mean of gradients, like momentum) and the second moment (mean of squared gradients, like RMSProp). These are used to compute an adaptive learning rate per parameter. It works well out of the box with minimal tuning.
+</think>
+A: The Adam optimizer combines the benefits of momentum and adaptive learning rates, maintaining per-parameter learning rates that are adapted based on the first and second moments of the gradients. It is robust to noisy gradients and works well across a wide range of tasks and architectures.
+
+Q: What is dropout?
+<think>
+During training, dropout randomly sets a fraction of neuron activations to zero. This prevents co-adaptation — neurons cannot rely on specific other neurons always being present. The result is an ensemble effect: the network learns multiple redundant pathways, which improves generalization. At inference time, dropout is disabled and all neurons are used.
+</think>
+A: Dropout is a regularization technique where random neurons are set to zero during training with a specified probability. This forces the network to learn redundant representations, improving robustness and reducing overfitting without significantly slowing down training.
+
+Q: What is layer normalization?
+<think>
+Layer norm normalizes across the feature dimension for each sample independently, in contrast to batch norm which normalizes across the batch dimension. This makes layer norm independent of batch size, which is important for transformers that use variable-length sequences and may have small or inconsistent batch sizes.
+</think>
+A: Layer normalization normalizes the activations within each layer across the feature dimension rather than across the batch. It is preferred over batch normalization in transformer architectures because it works well with variable-length sequences and small batch sizes.
+
+Q: What is multi-head attention?
+<think>
+Multi-head attention runs the attention mechanism multiple times in parallel, each with different learned projection matrices. Each "head" learns to attend to different aspects of the input (e.g., one head might track syntax, another semantics). The outputs of all heads are concatenated and projected to the output dimension.
+</think>
+A: Multi-head attention allows the transformer to jointly attend to information from different representation subspaces at different positions. By running multiple attention operations in parallel, the model captures diverse aspects of the relationships between tokens in the input sequence.
+
+Q: What is positional encoding?
+<think>
+Self-attention is permutation-invariant — it does not inherently know the order of tokens. Positional encoding adds order information. The original transformer used sinusoidal encoding (fixed mathematical functions of position). GPT-2 instead uses learned positional embeddings, one vector per position, which are added to token embeddings at the input.
+</think>
+A: Positional encoding provides transformers with information about the order of tokens in a sequence, since the self-attention mechanism is permutation-invariant. GPT-2 uses learned positional embeddings that are added to the token embeddings at the input layer.
+
+Q: What is the vocabulary size of GPT-2?
+<think>
+GPT-2 has a vocabulary of 50,257 tokens built using byte-level BPE. The extra token beyond 50,256 (a round number) is the end-of-text special token. Each token ID maps to a learned embedding vector. When we add special tokens (like reasoning markers), we resize the embedding table to accommodate the new vocabulary.
+</think>
+A: The vocabulary size of GPT-2 is 50,257 tokens, covering a wide range of English text including punctuation, numbers, and special tokens. The embedding matrix maps each token ID to a dense vector which serves as the initial representation of each input token.
+
+Q: What is causal masking?
+<think>
+Causal masking enforces the autoregressive property during training. In the attention matrix, positions are masked so that position i can only attend to positions 0 through i. Without this mask, the model could "cheat" during training by looking at future tokens. The mask is implemented as an upper-triangular matrix of negative infinity values added to the attention scores before softmax.
+</think>
+A: Causal masking in decoder-only transformers prevents each position from attending to future positions in the sequence. This ensures that during training and inference, the model only uses past context to predict the next token, maintaining the autoregressive property.
+
+Q: What is beam search?
+<think>
+Beam search keeps the top-k (beam width) most probable partial sequences at each step, expanding each one and again keeping only the top-k. This explores a wider space than greedy decoding (k=1) while being tractable. The final output is the sequence with the highest overall score. It tends to be more grammatically correct but less creative than sampling.
+</think>
+A: Beam search is a deterministic decoding algorithm that maintains multiple candidate sequences and selects the one with the highest overall probability. While it tends to produce high-quality outputs, it can be repetitive and lacks the diversity of sampling-based methods.
+
+Q: What is early stopping?
+<think>
+Early stopping is a form of regularization through the training process itself. We track validation loss during training. If it stops improving for a certain number of steps (the patience), we stop training and restore the best checkpoint. This prevents wasting compute on epochs that only serve to overfit.
+</think>
+A: Early stopping monitors a validation metric during training and halts the process when the metric stops improving for a specified number of steps. This prevents overfitting and saves compute resources by avoiding unnecessary training epochs.
+
+Q: What is a validation set?
+<think>
+The validation set is distinct from both the training set (used to update weights) and the test set (used for final evaluation). It is used during training to monitor generalization: if training loss decreases but validation loss increases, the model is overfitting. It also guides hyperparameter choices and early stopping decisions.
+</think>
+A: The validation set is a held-out portion of the data used to evaluate model performance during training without influencing the weight updates. Monitoring validation loss alongside training loss helps detect overfitting and guides decisions about model selection and early stopping.
+
+Q: What is learning rate warmup?
+<think>
+At the start of training, weights are random and gradients are large. Taking big steps immediately can push weights into bad regions. Warmup linearly increases the learning rate from near zero to the target value over the first N steps. Once the optimizer has accumulated some gradient history and weights are in a reasonable region, the full learning rate is used.
+</think>
+A: Warm-up scheduling gradually increases the learning rate from zero to its target value over an initial number of training steps. This technique stabilizes training in the early phases when gradients are large and the model is far from a good solution, preventing divergence.
+
+Q: What is cosine annealing?
+<think>
+Cosine annealing is a learning rate schedule that follows a cosine curve from the initial learning rate down to near zero. Early in training, the higher learning rate helps explore the loss landscape broadly. As the cosine curve descends, the model makes finer adjustments to converge into a sharp minimum. It can be combined with warm restarts (SGDR) to escape local minima.
+</think>
+A: Cosine annealing is a learning rate scheduling strategy that decreases the learning rate following a cosine curve over the course of training. It allows the model to explore broadly with a high learning rate early on and then converge more precisely to a good minimum as training progresses.
+
+Q: What is the generalization gap?
+<think>
+The generalization gap is training_metric minus test_metric. A model that perfectly memorizes training data but does poorly on new data has a large generalization gap. Minimizing this gap is the central challenge: we want a model that has learned the underlying patterns, not just the specific examples. The bias-variance tradeoff is the theoretical framework for this.
+</think>
+A: The generalization gap refers to the difference in performance between a model on the training set and on unseen test data. Reducing this gap is a central challenge in machine learning and requires careful balance between model capacity, regularization, and the amount of available training data.
+
+Q: What is weight decay?
+<think>
+Weight decay adds a term to the loss: loss = task_loss + lambda * sum(w^2). This penalizes large weights, biasing the model toward simpler solutions with smaller weights. It is equivalent to L2 regularization. In Adam the application is slightly different (AdamW decouples weight decay from the gradient-based update).
+</think>
+A: Weight decay is a regularization technique that adds a penalty proportional to the magnitude of model weights to the loss function. This discourages the model from learning unnecessarily large weights, helping to prevent overfitting and improve generalization on unseen data.
+
+Q: What is a language model?
+<think>
+A language model defines a probability distribution over sequences of text. The core task is: given the previous tokens, predict the probability distribution over the next token. Training maximizes the log-probability of observed tokens. This objective alone, applied at scale, produces models that can answer questions, write code, translate, and much more.
+</think>
+A: A language model assigns probabilities to sequences of text by predicting the likelihood of each token given the preceding context. This probabilistic framework underlies both the training objective and the text generation process of models like GPT-2.
+
+Q: What is data augmentation for NLP?
+<think>
+NLP data augmentation creates new training examples from existing ones to increase dataset diversity without manual annotation. Common techniques: back-translation (translate to another language and back to get a paraphrase), synonym replacement (swap words with synonyms), and random insertion/deletion of words. These are especially valuable when labeled data is scarce.
+</think>
+A: Data augmentation for NLP includes techniques such as back-translation, synonym replacement, and random word insertion or deletion. These methods artificially expand the training set, improving model robustness and generalization, particularly when labeled data is scarce.
+
+Q: What is Byte Pair Encoding?
+<think>
+BPE is a compression-inspired algorithm. Start with individual characters (or bytes). Count the frequency of all adjacent pairs. Merge the most frequent pair into a new symbol. Repeat until the desired vocabulary size is reached. The result is a vocabulary of common subword units that efficiently represents text with a fixed-size vocabulary.
+</think>
+A: Byte Pair Encoding is a subword tokenization algorithm that iteratively merges the most frequent pairs of characters or character sequences in a corpus. It produces a compact vocabulary that can represent rare and out-of-vocabulary words as sequences of subword units.
+
+Q: What is the difference between training and inference?
+<think>
+During training: forward pass computes loss, backward pass computes gradients, optimizer updates weights. Gradients are stored in memory. During inference: only forward pass, no gradients needed (torch.no_grad()), weights are fixed. Inference is much cheaper computationally, which is why models can be deployed to serve many requests after expensive training.
+</think>
+A: During training, the model's weights are updated using gradient descent to minimize the loss on a dataset. During inference, the weights are frozen and the model uses its learned parameters to generate predictions or text continuations for new inputs.
+
+Q: What is a neural network?
+<think>
+A neural network is a stack of parameterized transformations. Each layer applies a linear transformation (matrix multiplication + bias) followed by a non-linear activation function. The non-linearity is crucial — without it, stacking linear layers produces only another linear transformation. Common activations include ReLU, GELU, and sigmoid.
+</think>
+A: A neural network is a computational model inspired by the structure of biological brains, consisting of layers of interconnected nodes called neurons. Each neuron applies a weighted sum of its inputs followed by a non-linear activation function, enabling the network to learn complex mappings from inputs to outputs.
+
+Q: What is a loss function?
+<think>
+The loss function is the measure of how wrong the model's predictions are. It maps model outputs and true labels to a scalar value to be minimized. The choice of loss depends on the task: cross-entropy for classification/language modeling, MSE for regression, contrastive loss for similarity learning. The loss determines what the model learns to optimize.
+</think>
+A: A loss function measures how far the model's predictions are from the true targets during training. The choice of loss function depends on the task: cross-entropy is used for classification and language modeling, while mean squared error is common for regression problems.
+
+Q: What is stochastic gradient descent?
+<think>
+SGD updates weights using a noisy estimate of the gradient computed from a mini-batch rather than the full dataset. This noise is actually beneficial: it prevents the optimizer from settling into sharp minima that don't generalize well. Full-batch gradient descent is more stable but computationally infeasible for large datasets.
+</think>
+A: Stochastic gradient descent updates model weights using the gradient computed from a single training example or a small mini-batch rather than the entire dataset. This introduces noise into the optimization process, which can help escape local minima and speeds up training significantly.
+
+Q: How does self-attention work?
+<think>
+Self-attention operates in three steps per head: (1) project each token embedding into query, key, and value vectors using learned weight matrices, (2) compute attention scores = softmax(QK^T / sqrt(d_k)) — the dot product measures relevance between tokens, scaled to prevent vanishing gradients, (3) compute the output as a weighted sum of value vectors using the attention scores. The result lets each token "look at" all other tokens.
+</think>
+A: Self-attention computes a weighted sum of all token representations in a sequence, where the weights reflect how relevant each token is to every other token. For each position, it produces query, key, and value vectors, computes dot-product similarities between queries and keys, and uses the resulting weights to aggregate the values.
+
+Q: What is a feed-forward network in a transformer?
+<think>
+Each transformer block has two sublayers: multi-head attention and a feed-forward network. The FFN is applied position-wise (same weights at every position). It typically has two linear layers with a GELU activation in between, and the hidden dimension is 4x the model dimension. It adds capacity beyond what attention provides.
+</think>
+A: Feed-forward networks within each transformer layer apply two linear transformations with a non-linear activation function in between. These sublayers learn to transform the attended representations into formats that are more useful for subsequent layers and the final prediction.
+
+Q: What is the difference between GPT-2 and GPT-3?
+<think>
+The core difference is scale. GPT-2 has variants from 117M to 1.5B parameters. GPT-3 has 175B parameters — more than 100x larger. With this scale, GPT-3 demonstrates emergent abilities: reliable few-shot and zero-shot task completion through in-context learning, without any gradient updates. This was a qualitative shift in what language models could do.
+</think>
+A: GPT-3 is a much larger version of GPT-2, with 175 billion parameters compared to GPT-2's 1.5 billion. GPT-3 demonstrates significantly stronger few-shot and zero-shot capabilities due to its scale, and can perform many tasks without any fine-tuning through in-context learning alone.
+
+Q: What is in-context learning?
+<think>
+In-context learning is striking because no weight updates occur. The model adapts to a new task purely by conditioning on examples in the prompt. Larger models are dramatically better at this. The examples appear to activate relevant "task representations" learned during pretraining. This is also why prompt engineering matters — the format of examples significantly affects performance.
+</think>
+A: In-context learning is the ability of large language models to perform new tasks by conditioning on a few examples provided directly in the input prompt, without updating any model weights. This emergent capability becomes more reliable as model size increases.
+
+Q: What causes vanishing gradients?
+<think>
+Vanishing gradients arise from the chain rule of backpropagation. Gradients are multiplied through many layers. If those multiplications involve values consistently less than 1 (e.g., from sigmoid activations or certain weight matrices), the gradient signal shrinks exponentially with depth. By the time it reaches early layers, it is too small to drive learning.
+</think>
+A: Vanishing gradients occur when gradient signals become extremely small as they are backpropagated through many layers of a deep network. This prevents early layers from learning effectively. Techniques like residual connections, layer normalization, and careful weight initialization help mitigate this problem.
+
+Q: What are residual connections?
+<think>
+A residual connection adds the layer's input directly to its output: output = layer(x) + x. During backpropagation, gradients flow through both the layer and the identity shortcut. The shortcut ensures gradients of at least magnitude 1 flow to earlier layers, solving the vanishing gradient problem for very deep networks like ResNet and transformers.
+</think>
+A: Residual connections, also called skip connections, add the input of a layer directly to its output before passing to the next layer. This allows gradients to flow more easily during backpropagation, enabling the training of very deep networks without vanishing gradients.
+
+Q: What is the purpose of the feed-forward layer in a transformer?
+<think>
+After self-attention mixes information across positions, the feed-forward layer processes each position independently. It adds non-linearity and additional representational capacity. The 4x expansion in the hidden layer allows the model to express a richer set of functions than a simple projection. It is the largest contributor to transformer parameter count.
+</think>
+A: The feed-forward layer in each transformer block applies position-wise transformations to the representations produced by the attention mechanism. It typically expands the dimensionality by a factor of four before projecting back, allowing the model to learn complex non-linear feature transformations.
+
+Q: What is greedy decoding?
+<think>
+Greedy decoding picks the highest-probability token at every step: argmax over the vocabulary. It is O(1) in memory and fast, but has a fatal flaw — a locally optimal choice at step t may not be globally optimal. For example, starting a sentence with a common word might lead to an awkward continuation, while a slightly less probable first word might lead to a much better sentence overall.
+</think>
+A: Greedy decoding selects the single most probable token at each generation step. It is fast and deterministic but often produces repetitive or suboptimal text because it does not consider the overall probability of the full generated sequence.
+
+Q: What is model capacity?
+<think>
+Capacity is the expressive power of a model. More parameters means a larger hypothesis space — the model can represent more complex functions. But higher capacity requires more data to generalize well. The right capacity depends on the task complexity and data availability. Underfitting = too little capacity. Overfitting = too much capacity for the data available.
+</think>
+A: Model capacity refers to the ability of a model to learn complex patterns, determined by the number of parameters and the architecture. Higher capacity models can fit more complex data distributions but are also more prone to overfitting when training data is limited.
+
+Q: What is a pretrained model?
+<think>
+Pretraining involves training on a very large general corpus to acquire broad knowledge. The model learns grammar, facts, reasoning patterns, and world knowledge. This learned representation then serves as a starting point for fine-tuning on specific tasks. The key insight: the pretrained weights are far better initialization than random weights for most downstream tasks.
+</think>
+A: A pretrained model has been trained on a large general dataset before being adapted to a specific task. Pretraining allows the model to learn broad representations of language or vision that can be efficiently transferred to downstream tasks with relatively little additional training data.
+
+Q: What is weight initialization?
+<think>
+Random initialization must be done carefully. Too-large initial weights cause exploding gradients (activations saturate or grow unboundedly). Too-small initial weights cause vanishing gradients. Xavier initialization scales weights by 1/sqrt(fan_in + fan_out) for sigmoid/tanh activations. He initialization uses 2/fan_in for ReLU. These keep variance consistent across layers at initialization.
+</think>
+A: Weight initialization sets the starting values of model parameters before training begins. Random initialization with appropriate scaling, such as Xavier or He initialization, prevents vanishing or exploding gradients in the early stages of training deep networks.
+
+Q: What is gradient clipping?
+<think>
+Exploding gradients are the opposite problem from vanishing: gradients grow exponentially through deep layers or over many time steps (common in RNNs). Gradient clipping caps the L2 norm of the gradient vector at a threshold. If the gradient norm exceeds the threshold, all gradients are rescaled proportionally. This keeps updates stable without changing their direction.
+</think>
+A: Gradient clipping limits the magnitude of gradients during backpropagation to prevent exploding gradients, which can destabilize training. By capping gradient norms at a threshold value, it allows stable training of deep networks and recurrent architectures.
+
+Q: What is a mini-batch?
+<think>
+Mini-batch training is the practical middle ground. A mini-batch of 32-512 samples provides a noisy but useful gradient estimate. The noise helps regularize (acts like an implicit ensemble). The batch is small enough to fit in GPU memory and process quickly. Gradient accumulation can effectively simulate larger batches when memory is constrained.
+</think>
+A: A mini-batch is a small subset of the training data used to compute a single gradient update during training. Mini-batch gradient descent balances the efficiency of batch gradient descent with the regularization benefits of stochastic gradient descent.
+
+Q: What is an autoregressive model?
+<think>
+Autoregressive generation is the process of generating one token at a time, each conditioned on all previously generated tokens. The joint probability of a sequence is factored as a product of conditional probabilities: P(x1, x2, ..., xn) = P(x1) * P(x2|x1) * P(x3|x1,x2) * ... This factorization is exact and the model is trained to maximize this likelihood.
+</think>
+A: An autoregressive model generates sequences one element at a time, conditioning each new element on all previously generated elements. GPT-2 and other causal language models are autoregressive, predicting each next token based on the full left context.
+
+Q: What is the purpose of the end-of-sequence token?
+<think>
+Without an explicit stopping signal, the model would generate text indefinitely. The end-of-sequence token (EOS) is a special token in the vocabulary that the model learns to produce when a response is complete. During inference, generation halts when this token is sampled. During training, it is appended at the end of each example so the model learns when to stop.
+</think>
+A: The end-of-sequence token signals the model that a sequence is complete. During generation, the model stops producing new tokens when it outputs this special token, allowing it to generate sequences of variable length appropriate to the context.
+
+Q: What is logit in the context of language models?
+<think>
+At each generation step, the model's final linear layer (the LM head) projects the last hidden state to a vector of size vocabulary_size. Each value in this vector is the raw unnormalized score (logit) for the corresponding vocabulary token. Softmax converts these logits to probabilities. Temperature divides the logits before softmax to control the output distribution sharpness.
+</think>
+A: A logit is the raw, unnormalized score output by the model's final linear layer for each token in the vocabulary. Logits are converted to probabilities using the softmax function, and the resulting distribution is used to sample or select the next token during generation.
