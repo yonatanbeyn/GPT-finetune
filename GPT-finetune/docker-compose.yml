@@ -1,0 +1,27 @@
+services:
+  finetune:
+    build: .
+    image: gpt-finetune:latest
+    # Pass the host GPU(s) into the container via NVIDIA Container Toolkit.
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    # Sanity env vars — visible inside the container
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    volumes:
+      # Persist fine-tuned checkpoints to the host
+      - ./output:/app/output
+      # Persist HF model downloads so re-runs don't re-download gpt2
+      - hf-cache:/cache/huggingface
+    # stdin/tty so `inference.py` interactive mode works when you override the command
+    stdin_open: true
+    tty: true
+
+volumes:
+  hf-cache:
